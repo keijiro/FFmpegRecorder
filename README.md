@@ -15,7 +15,7 @@ System Requirements
 CAVEAT
 ------
 
-This pakcage uses a dirty trick to access the internal API of Unity Recorder
+This package uses a dirty trick to access the internal API of Unity Recorder
 -- It pretends to be [AOV Recorder] to circumvent the protection. This means
 you can't use FFmpegRecorder and AOV Recorder at the same time. You only can
 use one of these packages in a project.
@@ -46,3 +46,12 @@ To the `dependencies` section:
 ```
 
 [scoped registry]: https://docs.unity3d.com/Manual/upm-scoped.html
+
+Frequently Asked Questions
+--------------------------
+
+#### Output video is vertically flipped
+
+This issue will be fixed in a feature version. At the moment, please manually
+turn on the "Flip Vertical" option in the recorder settings when you find the
+output is flipped.
