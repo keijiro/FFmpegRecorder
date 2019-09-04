@@ -45,6 +45,22 @@ To the `dependencies` section:
 "jp.keijiro.recorder.ffmpeg": "0.0.1"
 ```
 
+After changes, the manifest file should look like below:
+
+```
+{
+  "scopedRegistries": [
+    {
+      "name": "Keijiro",
+      "url": "https://registry.npmjs.com",
+      "scopes": [ "jp.keijiro" ]
+    }
+  ],
+  "dependencies": {
+    "jp.keijiro.recorder.ffmpeg": "0.0.1",
+    ...
+```
+
 [scoped registry]: https://docs.unity3d.com/Manual/upm-scoped.html
 
 Frequently Asked Questions
