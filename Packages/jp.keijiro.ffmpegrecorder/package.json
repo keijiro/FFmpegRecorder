@@ -1,0 +1,16 @@
+{
+    "author": "Keijiro Takahashi",
+    "dependencies": {
+        "com.unity.recorder": "2.0.3-preview.1",
+        "jp.keijiro.ffmpeg-out": "1.0.3"
+    },
+    "description": "FFmpeg extension for Unity Recorder.",
+    "displayName": "FFmpeg Recorder",
+    "keywords": [ "unity" ],
+    "license": "MIT",
+    "name": "jp.keijiro.ffmpegrecorder",
+    "repository": "github:keijiro/FFmpegRecorder",
+    "unity": "2019.2",
+    "unityRelease": "0f1",
+    "version": "0.0.1"
+}
