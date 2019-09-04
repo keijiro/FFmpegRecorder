@@ -68,6 +68,6 @@ Frequently Asked Questions
 
 #### Output video is vertically flipped
 
-This issue will be fixed in a feature version. At the moment, please manually
+This issue will be fixed in a future version. At the moment, please manually
 turn on the "Flip Vertical" option in the recorder settings when you find the
 output is flipped.
