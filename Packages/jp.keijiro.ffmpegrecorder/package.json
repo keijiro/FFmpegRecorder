@@ -7,7 +7,7 @@
     "description": "FFmpeg extension for Unity Recorder.",
     "displayName": "FFmpeg Recorder",
     "keywords": [ "unity" ],
-    "license": "MIT",
+    "license": "Unlicense",
     "name": "jp.keijiro.ffmpegrecorder",
     "repository": "github:keijiro/FFmpegRecorder",
     "unity": "2019.2",
