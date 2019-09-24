@@ -42,7 +42,7 @@ To the `scopedRegistries` section:
 To the `dependencies` section:
 
 ```
-"jp.keijiro.recorder.ffmpeg": "0.0.2"
+"jp.keijiro.recorder.ffmpeg": "0.0.3"
 ```
 
 After changes, the manifest file should look like below:
