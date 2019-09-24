@@ -57,7 +57,7 @@ After changes, the manifest file should look like below:
     }
   ],
   "dependencies": {
-    "jp.keijiro.recorder.ffmpeg": "0.0.2",
+    "jp.keijiro.recorder.ffmpeg": "0.0.3",
     ...
 ```
 
