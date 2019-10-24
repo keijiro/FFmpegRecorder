@@ -8,6 +8,14 @@ namespace UnityEditor.Recorder
     class FfmpegRecorderEditor : RecorderEditor
     {
         SerializedProperty _preset;
+        SerializedProperty _frameRateConversion;
+        SerializedProperty _outputFrameRate;
+
+        static class Styles
+        {
+            public static readonly GUIContent fpsConversion = new GUIContent("FPS Conversion");
+            public static readonly GUIContent outputRate = new GUIContent("Output Rate");
+        }
 
         GUIContent[] _presetLabels;
         int[] _presetOptions;
@@ -18,6 +26,8 @@ namespace UnityEditor.Recorder
             if (target == null) return;
 
             _preset = serializedObject.FindProperty("preset");
+            _frameRateConversion = serializedObject.FindProperty("frameRateConversion");
+            _outputFrameRate = serializedObject.FindProperty("outputFrameRate");
 
             // Preset labels
             var presets = FFmpegPreset.GetValues(typeof(FFmpegPreset));
@@ -29,6 +39,23 @@ namespace UnityEditor.Recorder
         protected override void FileTypeAndFormatGUI()
         {
             EditorGUILayout.IntPopup(_preset, _presetLabels, _presetOptions);
+
+            var wide = EditorGUIUtility.labelWidth > 140;
+
+            if (wide)
+                EditorGUILayout.PropertyField(_frameRateConversion);
+            else
+                EditorGUILayout.PropertyField(_frameRateConversion, Styles.fpsConversion);
+
+            if (_frameRateConversion.boolValue)
+            {
+                EditorGUI.indentLevel++;
+                if (wide)
+                    EditorGUILayout.PropertyField(_outputFrameRate);
+                else
+                    EditorGUILayout.PropertyField(_outputFrameRate, Styles.outputRate);
+                EditorGUI.indentLevel--;
+            }
         }
     }
 }

@@ -35,6 +35,7 @@ namespace UnityEditor.Recorder
                 + " -video_size " + input.outputWidth + "x" + input.outputHeight
                 + " -framerate " + session.settings.frameRate
                 + " -loglevel warning -i - " + m_Settings.preset.GetOptions()
+                + " " + m_Settings.FrameRateArgs
                 + " \"" + m_Settings.fileNameGenerator.BuildAbsolutePath(session) + "\"";
 
             _pipe = new FFmpegPipe(args);

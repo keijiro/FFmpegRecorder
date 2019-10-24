@@ -9,6 +9,8 @@ namespace UnityEditor.Recorder
     sealed class FfmpegRecorderSettings : RecorderSettings
     {
         public FFmpegPreset preset = FFmpegPreset.H264Default;
+        public bool frameRateConversion = false;
+        public float outputFrameRate = 59.94f;
 
         [SerializeField] ImageInputSelector _imageInputSelector = new ImageInputSelector();
 
@@ -16,6 +18,13 @@ namespace UnityEditor.Recorder
         {
             fileNameGenerator.fileName = "ffmpeg";
             _imageInputSelector.ForceEvenResolution(true);
+        }
+
+        public string FrameRateArgs {
+            get {
+                if (!frameRateConversion) return "";
+                return "-r " + outputFrameRate;
+            }
         }
 
         public override IEnumerable<RecorderInputSettings> inputsSettings
