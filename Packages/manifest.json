@@ -9,16 +9,6 @@
     }
   ],
   "dependencies": {
-    "com.unity.render-pipelines.high-definition": "7.1.2",
-    "com.unity.modules.animation": "1.0.0",
-    "com.unity.modules.audio": "1.0.0",
-    "com.unity.modules.director": "1.0.0",
-    "com.unity.modules.imageconversion": "1.0.0",
-    "com.unity.modules.imgui": "1.0.0",
-    "com.unity.modules.particlesystem": "1.0.0",
-    "com.unity.modules.physics": "1.0.0",
-    "com.unity.modules.physics2d": "1.0.0",
-    "com.unity.modules.ui": "1.0.0",
-    "com.unity.modules.vr": "1.0.0"
+    "com.unity.render-pipelines.high-definition": "7.1.6"
   }
 }
