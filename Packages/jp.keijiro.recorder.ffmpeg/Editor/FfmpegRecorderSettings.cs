@@ -1,9 +1,9 @@
 using UnityEngine;
+using UnityEditor.Recorder;
 using UnityEditor.Recorder.Input;
 using System.Collections.Generic;
-using FFmpegOut;
 
-namespace UnityEditor.Recorder
+namespace FFmpegOut.Recorder
 {
     [RecorderSettings(typeof(FfmpegRecorder), "Ffmpeg", "movie_16")]
     sealed class FfmpegRecorderSettings : RecorderSettings
@@ -16,8 +16,8 @@ namespace UnityEditor.Recorder
 
         public FfmpegRecorderSettings()
         {
-            fileNameGenerator.fileName = "ffmpeg";
-            _imageInputSelector.ForceEvenResolution(true);
+            FileNameGenerator.FileName = "ffmpeg";
+            _imageInputSelector.ForceEvenResolutionPublic(true);
         }
 
         public string FrameRateArgs {
@@ -27,12 +27,12 @@ namespace UnityEditor.Recorder
             }
         }
 
-        public override IEnumerable<RecorderInputSettings> inputsSettings
+        public override IEnumerable<RecorderInputSettings> InputsSettings
         {
-            get { yield return _imageInputSelector.selected; }
+            get { yield return _imageInputSelector.Selected; }
         } 
 
-        public override string extension {
+        protected override string Extension {
             get { return preset.GetSuffix().Substring(1); }
         }
     }

@@ -1,5 +1,5 @@
 {
-    "name": "Unity.AOVRecorder.Editor",
+    "name": "FFmpegOut.Recorder.Editor",
     "references": [
         "GUID:847b179520b009e4c8d15c296b1cbf35",
         "GUID:2d927f977f87e2f4497af759c3426e00"
@@ -13,5 +13,6 @@
     "precompiledReferences": [],
     "autoReferenced": true,
     "defineConstraints": [],
-    "versionDefines": []
+    "versionDefines": [],
+    "noEngineReferences": false
 }

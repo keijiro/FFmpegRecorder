@@ -1,19 +1,19 @@
 using UnityEngine;
+using UnityEditor.Recorder;
 using UnityEngine.Rendering;
-using FFmpegOut;
 
-namespace UnityEditor.Recorder
+namespace FFmpegOut.Recorder
 {
     sealed class FfmpegRecorder : BaseTextureRecorder<FfmpegRecorderSettings>
     {
         FFmpegPipe _pipe;
 
-        protected override TextureFormat readbackTextureFormat
+        protected override TextureFormat ReadbackTextureFormat
         {
             get { return  TextureFormat.RGBA32; }
         }
 
-        public override bool BeginRecording(RecordingSession session)
+        protected override bool BeginRecording(RecordingSession session)
         {
             if (!base.BeginRecording(session)) return false;
 
@@ -26,18 +26,19 @@ namespace UnityEditor.Recorder
                 return false;
             }
 
-            m_Settings.fileNameGenerator.CreateDirectory(session);
+            Settings.FileNameGenerator.CreateDirectory(session);
 
             var input = m_Inputs[0] as BaseRenderTextureInput;
             var args = 
                 "-y -f rawvideo -vcodec rawvideo -pixel_format rgba"
                 + " -colorspace bt709"
-                + " -video_size " + input.outputWidth + "x" + input.outputHeight
-                + " -framerate " + session.settings.frameRate
-                + " -loglevel error -i - " + m_Settings.preset.GetOptions()
-                + " " + m_Settings.FrameRateArgs
-                + " \"" + m_Settings.fileNameGenerator.BuildAbsolutePath(session) + "\"";
+                + " -video_size " + input.GetOutputWidth() + "x" + input.GetOutputHeight()
+                + " -framerate " + session.settings.FrameRate
+                + " -loglevel error -i - " + Settings.preset.GetOptions()
+                + " " + Settings.FrameRateArgs
+                + " \"" + Settings.FileNameGenerator.BuildAbsolutePath(session) + "\"";
 
+            Debug.Log(args);
             _pipe = new FFmpegPipe(args);
 
             return true;

@@ -1,8 +1,9 @@
 using UnityEngine;
+using UnityEditor;
+using UnityEditor.Recorder;
 using System.Linq;
-using FFmpegOut;
 
-namespace UnityEditor.Recorder
+namespace FFmpegOut.Recorder
 {
     [CustomEditor(typeof(FfmpegRecorderSettings))]
     class FfmpegRecorderEditor : RecorderEditor
