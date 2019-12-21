@@ -38,7 +38,6 @@ namespace FFmpegOut.Recorder
                 + " " + Settings.FrameRateArgs
                 + " \"" + Settings.FileNameGenerator.BuildAbsolutePath(session) + "\"";
 
-            Debug.Log(args);
             _pipe = new FFmpegPipe(args);
 
             return true;
