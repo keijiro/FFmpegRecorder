@@ -10,17 +10,7 @@ videos in Unity Editor via [FFmpeg].
 System Requirements
 -------------------
 
-- Unity 2019.1 or later
-
-CAVEAT
-------
-
-This package uses a dirty trick to access the internal API of Unity Recorder
--- It pretends to be [AOV Recorder] to circumvent the protection. This means
-you can't use FFmpegRecorder and AOV Recorder at the same time. You only can
-use one of these packages in a project.
-
-[AOV Recorder]: https://docs.unity3d.com/Packages/com.unity.aovrecorder@latest/
+- Unity 2019.3 or later
 
 How To Install
 --------------
@@ -42,7 +32,7 @@ To the `scopedRegistries` section:
 To the `dependencies` section:
 
 ```
-"jp.keijiro.recorder.ffmpeg": "0.0.6"
+"jp.keijiro.recorder.ffmpeg": "1.0.0"
 ```
 
 After changes, the manifest file should look like below:
@@ -57,7 +47,7 @@ After changes, the manifest file should look like below:
     }
   ],
   "dependencies": {
-    "jp.keijiro.recorder.ffmpeg": "0.0.6",
+    "jp.keijiro.recorder.ffmpeg": "1.0.0",
     ...
 ```
 
