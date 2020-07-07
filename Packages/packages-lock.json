@@ -1,0 +1,98 @@
+{
+  "dependencies": {
+    "com.unity.recorder": {
+      "version": "2.1.0-preview.1",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.timeline": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.render-pipelines.core": {
+      "version": "7.3.1",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.ugui": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.render-pipelines.high-definition": {
+      "version": "7.3.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.render-pipelines.core": "7.3.1",
+        "com.unity.shadergraph": "7.3.1",
+        "com.unity.visualeffectgraph": "7.3.1",
+        "com.unity.render-pipelines.high-definition-config": "7.3.1"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.render-pipelines.high-definition-config": {
+      "version": "7.3.1",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.render-pipelines.core": "7.3.1"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.shadergraph": {
+      "version": "7.3.1",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.render-pipelines.core": "7.3.1"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.timeline": {
+      "version": "1.2.6",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.ugui": {
+      "version": "1.0.0",
+      "depth": 2,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.ui": "1.0.0"
+      }
+    },
+    "com.unity.visualeffectgraph": {
+      "version": "7.3.1",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.shadergraph": "7.3.1"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "jp.keijiro.ffmpeg-out": {
+      "version": "1.0.5",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://registry.npmjs.com"
+    },
+    "jp.keijiro.recorder.ffmpeg": {
+      "version": "file:jp.keijiro.recorder.ffmpeg",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {
+        "com.unity.recorder": "2.1.0-preview.1",
+        "jp.keijiro.ffmpeg-out": "1.0.5"
+      }
+    },
+    "com.unity.modules.ui": {
+      "version": "1.0.0",
+      "depth": 3,
+      "source": "builtin",
+      "dependencies": {}
+    }
+  }
+}
