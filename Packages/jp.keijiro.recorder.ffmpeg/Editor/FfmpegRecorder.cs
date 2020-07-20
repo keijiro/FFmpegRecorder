@@ -32,7 +32,7 @@ namespace FFmpegOut.Recorder
             var args = 
                 "-y -f rawvideo -vcodec rawvideo -pixel_format rgba"
                 + " -colorspace bt709"
-                + " -video_size " + input.GetOutputWidth() + "x" + input.GetOutputHeight()
+                + " -video_size " + input.OutputWidth + "x" + input.OutputHeight
                 + " -framerate " + session.settings.FrameRate
                 + " -loglevel error -i - " + Settings.preset.GetOptions()
                 + " " + Settings.FrameRateArgs
