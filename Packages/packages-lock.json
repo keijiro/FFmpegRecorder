@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.unity.recorder": {
-      "version": "2.1.0-preview.1",
+      "version": "2.2.0-preview.4",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -10,7 +10,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.render-pipelines.core": {
-      "version": "7.3.1",
+      "version": "7.4.1",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -19,40 +19,45 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.render-pipelines.high-definition": {
-      "version": "7.3.1",
+      "version": "7.4.1",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.render-pipelines.core": "7.3.1",
-        "com.unity.shadergraph": "7.3.1",
-        "com.unity.visualeffectgraph": "7.3.1",
-        "com.unity.render-pipelines.high-definition-config": "7.3.1"
+        "com.unity.render-pipelines.core": "7.4.1",
+        "com.unity.shadergraph": "7.4.1",
+        "com.unity.visualeffectgraph": "7.4.1",
+        "com.unity.render-pipelines.high-definition-config": "7.4.1"
       },
       "url": "https://packages.unity.com"
     },
     "com.unity.render-pipelines.high-definition-config": {
-      "version": "7.3.1",
+      "version": "7.4.1",
       "depth": 1,
       "source": "registry",
       "dependencies": {
-        "com.unity.render-pipelines.core": "7.3.1"
+        "com.unity.render-pipelines.core": "7.4.1"
       },
       "url": "https://packages.unity.com"
     },
     "com.unity.shadergraph": {
-      "version": "7.3.1",
+      "version": "7.4.1",
       "depth": 1,
       "source": "registry",
       "dependencies": {
-        "com.unity.render-pipelines.core": "7.3.1"
+        "com.unity.render-pipelines.core": "7.4.1"
       },
       "url": "https://packages.unity.com"
     },
     "com.unity.timeline": {
-      "version": "1.2.6",
-      "depth": 2,
+      "version": "1.4.0",
+      "depth": 0,
       "source": "registry",
-      "dependencies": {},
+      "dependencies": {
+        "com.unity.modules.director": "1.0.0",
+        "com.unity.modules.animation": "1.0.0",
+        "com.unity.modules.audio": "1.0.0",
+        "com.unity.modules.particlesystem": "1.0.0"
+      },
       "url": "https://packages.unity.com"
     },
     "com.unity.ugui": {
@@ -64,11 +69,11 @@
       }
     },
     "com.unity.visualeffectgraph": {
-      "version": "7.3.1",
+      "version": "7.4.1",
       "depth": 1,
       "source": "registry",
       "dependencies": {
-        "com.unity.shadergraph": "7.3.1"
+        "com.unity.shadergraph": "7.4.1"
       },
       "url": "https://packages.unity.com"
     },
@@ -84,15 +89,75 @@
       "depth": 0,
       "source": "embedded",
       "dependencies": {
-        "com.unity.recorder": "2.1.0-preview.1",
+        "com.unity.recorder": "2.2.0-preview.4",
         "jp.keijiro.ffmpeg-out": "1.0.5"
       }
+    },
+    "com.unity.modules.animation": {
+      "version": "1.0.0",
+      "depth": 1,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.audio": {
+      "version": "1.0.0",
+      "depth": 1,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.director": {
+      "version": "1.0.0",
+      "depth": 1,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.audio": "1.0.0",
+        "com.unity.modules.animation": "1.0.0"
+      }
+    },
+    "com.unity.modules.imageconversion": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.imgui": {
+      "version": "1.0.0",
+      "depth": 1,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.jsonserialize": {
+      "version": "1.0.0",
+      "depth": 1,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.particlesystem": {
+      "version": "1.0.0",
+      "depth": 1,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.physics": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
     },
     "com.unity.modules.ui": {
       "version": "1.0.0",
       "depth": 3,
       "source": "builtin",
       "dependencies": {}
+    },
+    "com.unity.modules.uielements": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.imgui": "1.0.0",
+        "com.unity.modules.jsonserialize": "1.0.0"
+      }
     }
   }
 }
