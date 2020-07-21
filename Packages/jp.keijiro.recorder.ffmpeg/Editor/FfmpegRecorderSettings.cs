@@ -9,6 +9,7 @@ namespace FFmpegOut.Recorder
     sealed class FfmpegRecorderSettings : RecorderSettings
     {
         public FFmpegPreset preset = FFmpegPreset.H264Default;
+        public bool highBitDepth = false;
         public bool frameRateConversion = false;
         public float outputFrameRate = 59.94f;
 
@@ -19,6 +20,12 @@ namespace FFmpegOut.Recorder
             FileNameGenerator.FileName = "ffmpeg";
             _imageInputSelector.ForceEvenResolutionPublic(true);
         }
+
+        public TextureFormat TextureFormat
+            => highBitDepth ? TextureFormat.RGBAHalf : TextureFormat.RGBA32;
+
+        public string PixelFormatName
+            => highBitDepth ? "rgba64" : "rgba";
 
         public string FrameRateArgs {
             get {

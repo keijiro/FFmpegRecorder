@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEditor.Recorder;
 using UnityEngine.Rendering;
+using Unity.Collections;
 
 namespace FFmpegOut.Recorder
 {
@@ -9,9 +10,7 @@ namespace FFmpegOut.Recorder
         FFmpegPipe _pipe;
 
         protected override TextureFormat ReadbackTextureFormat
-        {
-            get { return  TextureFormat.RGBA32; }
-        }
+            => Settings.TextureFormat;
 
         protected override bool BeginRecording(RecordingSession session)
         {
@@ -30,7 +29,8 @@ namespace FFmpegOut.Recorder
 
             var input = m_Inputs[0] as BaseRenderTextureInput;
             var args = 
-                "-y -f rawvideo -vcodec rawvideo -pixel_format rgba"
+                "-y -f rawvideo -vcodec rawvideo"
+                + " -pixel_format " + Settings.PixelFormatName
                 + " -colorspace bt709"
                 + " -video_size " + input.OutputWidth + "x" + input.OutputHeight
                 + " -framerate " + session.settings.FrameRate
@@ -64,14 +64,36 @@ namespace FFmpegOut.Recorder
 
         protected override void WriteFrame(Texture2D texture)
         {
-            _pipe.PushFrameData(texture.GetRawTextureData<byte>());
-            _pipe.SyncFrameData();
+            if (Settings.highBitDepth)
+            {
+                using (var img = HalfToUNorm16.Convert(texture.GetRawTextureData<ulong>()))
+                {
+                    _pipe.PushFrameData(img.Reinterpret<byte>(sizeof(ulong)));
+                    _pipe.SyncFrameData();
+                }
+            }
+            else
+            {
+                _pipe.PushFrameData(texture.GetRawTextureData<byte>());
+                _pipe.SyncFrameData();
+            }
         }
 
         protected override void WriteFrame(AsyncGPUReadbackRequest request)
         {
-            _pipe.PushFrameData(request.GetData<byte>());
-            _pipe.SyncFrameData();
+            if (Settings.highBitDepth)
+            {
+                using (var img = HalfToUNorm16.Convert(request.GetData<ulong>()))
+                {
+                    _pipe.PushFrameData(img.Reinterpret<byte>(sizeof(ulong)));
+                    _pipe.SyncFrameData();
+                }
+            }
+            else
+            {
+                _pipe.PushFrameData(request.GetData<byte>());
+                _pipe.SyncFrameData();
+            }
         }
     }
 }

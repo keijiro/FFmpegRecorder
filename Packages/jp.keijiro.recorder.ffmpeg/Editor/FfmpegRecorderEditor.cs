@@ -9,11 +9,13 @@ namespace FFmpegOut.Recorder
     class FfmpegRecorderEditor : RecorderEditor
     {
         SerializedProperty _preset;
+        SerializedProperty _highBitDepth;
         SerializedProperty _frameRateConversion;
         SerializedProperty _outputFrameRate;
 
         static class Styles
         {
+            public static readonly GUIContent sampling16Bit = new GUIContent("16-bit Sampling");
             public static readonly GUIContent fpsConversion = new GUIContent("FPS Conversion");
             public static readonly GUIContent outputRate = new GUIContent("Output Rate");
         }
@@ -27,6 +29,7 @@ namespace FFmpegOut.Recorder
             if (target == null) return;
 
             _preset = serializedObject.FindProperty("preset");
+            _highBitDepth = serializedObject.FindProperty("highBitDepth");
             _frameRateConversion = serializedObject.FindProperty("frameRateConversion");
             _outputFrameRate = serializedObject.FindProperty("outputFrameRate");
 
@@ -42,6 +45,8 @@ namespace FFmpegOut.Recorder
             EditorGUILayout.IntPopup(_preset, _presetLabels, _presetOptions);
 
             var wide = EditorGUIUtility.labelWidth > 140;
+
+            EditorGUILayout.PropertyField(_highBitDepth, Styles.sampling16Bit);
 
             if (wide)
                 EditorGUILayout.PropertyField(_frameRateConversion);

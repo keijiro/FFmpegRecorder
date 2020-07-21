@@ -1,6 +1,7 @@
 {
     "author": "Keijiro Takahashi",
     "dependencies": {
+        "com.unity.burst": "1.2.3",
         "com.unity.recorder": "2.2.0-preview.4",
         "jp.keijiro.ffmpeg-out": "1.0.5"
     },
