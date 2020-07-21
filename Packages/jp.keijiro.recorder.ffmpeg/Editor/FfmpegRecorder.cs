@@ -31,7 +31,7 @@ namespace FFmpegOut.Recorder
             var input = m_Inputs[0] as BaseRenderTextureInput;
             var args = 
                 "-y -f rawvideo -vcodec rawvideo -pixel_format rgba"
-                + " -colorspace bt709"
+                + " -colorspace bt709 -color_trc iec61966-2-1"
                 + " -video_size " + input.OutputWidth + "x" + input.OutputHeight
                 + " -framerate " + session.settings.FrameRate
                 + " -loglevel error -i - " + Settings.preset.GetOptions()
